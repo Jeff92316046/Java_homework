@@ -115,12 +115,14 @@ class io {
         Scanner sc = new Scanner(System.in);
         int temp = sc.nextInt();
         code = temp;
+
     }
 
     void continue_input() {
         Scanner sc = new Scanner(System.in);
         int temp = sc.nextInt();
         code = temp;
+
     }
 
     void init_output() {
