@@ -38,11 +38,11 @@ public class student_login_system {
 }
 
 class person {
-    protected String name = "unknown";
+    protected String name = "unknown";                  
     protected ArrayList<String> born_day =new ArrayList<>();
     protected String ID = "U12345678";
 
-    public void set_Name(){
+    public void set_Name(){                             //多載
         System.out.println("");
         System.out.print("enter your name : ");
         Scanner sc = new Scanner(System.in);
@@ -89,10 +89,10 @@ class person {
         return ID;
     }  
 }
-class student extends person {
+class student extends person {                  //繼承
     
-    String department = "unknown";
-    lesson_table L_T = new lesson_table();
+    String department = "computer science";
+    lesson_table L_T = new lesson_table();      //nested class
 
     student() {
     }
@@ -160,8 +160,8 @@ class teacher extends person {
 }
 
 class lesson_table {
-    ArrayList<String> lesson_name = new ArrayList<>();
-    HashMap<String, lesson> lesson_list = new HashMap<>();
+    ArrayList<String> lesson_name = new ArrayList<>();             //array
+    HashMap<String, lesson> lesson_list = new HashMap<>();         //map
     
     lesson_table() {
 
