@@ -42,7 +42,7 @@ class person {
     protected ArrayList<String> born_day =new ArrayList<>();
     protected String ID = "U12345678";
 
-    public void set_Name(){                             //多載
+    public void set_Name(){                             //overloading
         System.out.println("");
         System.out.print("enter your name : ");
         Scanner sc = new Scanner(System.in);
@@ -62,6 +62,7 @@ class person {
     public void set_Born_day(){
         System.out.println("");
         System.out.println("enter your born day");
+        System.out.println("ex : 2000 01 01");
         System.out.print("year : ");
         Scanner sc = new Scanner(System.in);
         String temp = sc.next();
@@ -89,9 +90,9 @@ class person {
         return ID;
     }  
 }
-class student extends person {                  //繼承
+class student extends person {                  //inherent
     
-    String department = "computer science";
+    private String department = "computer science";     //encapsulation
     lesson_table L_T = new lesson_table();      //nested class
 
     student() {
