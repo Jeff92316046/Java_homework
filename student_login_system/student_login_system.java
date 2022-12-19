@@ -218,7 +218,13 @@ class lesson_table {
     }
 }
 
-class lesson {
+interface lesson_pattern{
+    public void lesson_choose();
+    public String get_subject_str();
+    public boolean get_subject_chooser();
+}
+
+class lesson implements lesson_pattern {
     private String subject = "";
     private boolean subject_chooser = false;
     public teacher TC = new teacher();
