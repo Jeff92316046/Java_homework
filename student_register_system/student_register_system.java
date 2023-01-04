@@ -18,7 +18,8 @@ public class student_register_system {
             System.out.println("press 3 --> show your transcript");
             System.out.println("press 4 --> show your choosen lesson table");
             System.out.println("press 5 --> show your choosen lesson tuition");
-            System.out.println("press 6 --> end up studen login system");
+            System.out.println("press 6 --> show degree requirement");
+            System.out.println("press 7 --> end up studen login system");
             Scanner sc = new Scanner(System.in);
             int temp = sc.nextInt();
             if (temp == 1) {
@@ -31,7 +32,9 @@ public class student_register_system {
                 SD.show_lesson_table();
             } else if (temp == 5) {
                 SD.show_tuition();
-            } else if (temp == 6) {
+            } else if (temp == 6){
+                SD.show_department_degree_requirement();
+            } else if (temp == 7) {
                 break;
             } else {
                 System.out.println("this is not command");
@@ -147,7 +150,20 @@ class student {
             }
         }
     }
-
+    public void show_department_degree_requirement(){
+        System.out.println("");
+        System.out.println(get_department() + " degree requirement");
+        System.out.println("grade = -1 means you don't have been get the lesson");
+        System.out.println("subject / credit / grade");
+        for (int i = 0 ; i < L_T.Lesson_list.size() ; i++ ){
+            for (int j = 0 ; j < L_T.Lesson_list.get(i).size() ; j++){
+                if (L_T.Lesson_list.get(i).get(j).get_subject() == "")  continue;
+                else{
+                    System.out.println(L_T.Lesson_list.get(i).get(j).get_subject() + " / " + L_T.Lesson_list.get(i).get(j).get_credit() + " / " +L_T.Lesson_list.get(i).get(j).get_grade());
+                }
+            }
+        }
+    }
 
 }
 
@@ -222,8 +238,13 @@ class lesson_table {
 
 }
 
+interface lesson_partern{
+    public void lesson_choose();
+    public String get_subject();
+    public int get_credit();
+}
 
-class lesson  {
+class lesson implements lesson_partern {
     private String subject = "";                    //ok
     private boolean subject_chooser = false;        //ok
     //public teacher TC = new teacher();
